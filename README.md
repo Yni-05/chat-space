@@ -62,8 +62,8 @@ _ has_many :user, through: groups_users
 # groups_usersテーブル
 ｜Column｜Type｜Option|
 |------|----|------|
-|groups_id|integer|null: false, foreign_key: true|
-|users_id|integer|null: false|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false|
 
 ## Association
 _ belongs_to :group
