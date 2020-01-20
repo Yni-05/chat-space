@@ -56,7 +56,7 @@ _ has_many :groups
 |groups_id|integer|null: false, foreign_key: true|
 
 ## Association
-_ belongs_to :user
+_ has_many :user, through: groups_users
 
 
 # groups_usersテーブル
