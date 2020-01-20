@@ -52,7 +52,7 @@ _ has_many :groups
 # groupsテーブル
 ｜Column｜Type｜Option|
 |------|----|------|
-|name|text|null: false|
+|name|string|null: false|
 |groups_id|integer|null: false, foreign_key: true|
 
 ## Association
