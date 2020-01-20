@@ -33,7 +33,7 @@ Things you may want to cover:
 
 ## Associtation
 _ has_many :messages
-_ has_many :groups
+_ has_many :groups, through: groups_users
 _ has_many :tags
 _ has_many :photos
 
