@@ -55,7 +55,7 @@ _ has_many :groups
 |name|string|null: false|
 
 ## Association
-_ has_many :user, through: groups_users
+_ has_many :users, through: groups_users
 
 
 # groups_usersテーブル
@@ -67,3 +67,4 @@ _ has_many :user, through: groups_users
 ## Association
 _ belongs_to :group
 _ belongs_to :user
+
