@@ -34,33 +34,19 @@ Things you may want to cover:
 ## Associtation
 _ has_many :messages
 _ has_many :groups, through: groups_users
-_ has_many :tags
-_ has_many :photos
 
 
 # messagesテーブル
 ｜Column｜Type｜Option|
 |------|----|------|
-|message|text|null: false|
+|message|text|
 |image|string|
-|groups_id|integer|null: false|
-|users_id|integer|null: false|
+|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
 ## Associtation
-_ belongs_to :user
+_ belongs_to :group
 _ has_many :groups
-_ has_many :photos
-
-
-# photos_tagsテーブル
-｜Column｜Type｜Option|
-|------|----|------|
-|tags_id|integer|null: false, foreign_key: true|
-|photos_id|integer|null: false, foreign_key: true|
-
-## Association
-_ belongs_to :photo
-_ belongs_to :tag
 
 
 # groupsテーブル
@@ -70,30 +56,7 @@ _ belongs_to :tag
 |groups_id|integer|null: false, foreign_key: true|
 
 ## Association
-_ has_many :photos
-_ has_many :tags
 _ belongs_to :user
-
-
-# groups_photosテーブル
-｜Column｜Type｜Option|
-|------|----|------|
-|groups_id|integer|null: false, foreign_key: true|
-|photos_id|integer|null: false, foreign_key: true|
-
-## Association
-_ belongs_to :group
-_ belongs_to :photo
-
-# groups_tagsテーブル
-｜Column｜Type｜Option|
-|------|----|------|
-|groups_id|integer|null: false, foreign_key: true|
-|tags_id|integer|null: false, foreign_key: true|
-
-## Association
-_ belongs_to :group
-_ belongs_to :tag
 
 
 # groups_usersテーブル
