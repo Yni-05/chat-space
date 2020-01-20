@@ -52,31 +52,6 @@ _ has_many :groups
 _ has_many :photos
 
 
-# tagsテーブル
-｜Column｜Type｜Option|
-|------|----|------|
-|name|text|null: false|
-|tags_id|integer|null: false, foreign_key: true|
-
-## Associtation
-_ has_many :photos_tags
-_ has_many :photos, through: photos_tags
-_ belongs_to :user
-
-
-# photosテーブル
-｜Column｜Type｜Option|
-|------|----|------|
-｜name｜text|null: false|
-|location|text|null: false|
-|photos_id|integer|null: false, foreign_key: true|
-
-## Association
-_ has_many :photo_tags
-_ has_many :tags, through: photos_tags
-_ belongs_to :user
-
-
 # photos_tagsテーブル
 ｜Column｜Type｜Option|
 |------|----|------|
