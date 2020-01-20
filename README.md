@@ -45,8 +45,7 @@ _ has_many :groups, through: groups_users
 |user_id|integer|null: false, foreign_key: true|
 
 ## Associtation
-_ belongs_to :group
-_ has_many :groups
+_ has_many :groups, through: groups_messages
 
 
 # groupsテーブル
@@ -68,3 +67,13 @@ _ has_many :users, through: groups_users
 _ belongs_to :group
 _ belongs_to :user
 
+
+# groups_messagesテーブル
+｜Column｜Type｜Option|
+|------|----|------|
+|group_id|integer|null: false, foreign_key: true|
+|messages_id|integer|null: false, foreign_key: true|
+
+## Association
+_ belongs_to :group
+_ belongs_to :message
