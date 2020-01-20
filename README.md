@@ -32,8 +32,9 @@ Things you may want to cover:
 |nickname|string|null: false|
 
 ## Associtation
-_ has_many :messages, through: messages_users
+_ has_many :messages
 _ has_many :groups, through: groups_users
+_ has_many :groups_users
 
 
 # messagesテーブル
@@ -45,7 +46,8 @@ _ has_many :groups, through: groups_users
 |user_id|integer|null: false, foreign_key: true|
 
 ## Associtation
-_ has_many :groups, through: messages_users
+_ belongs_to :group
+_ belongs_to :user
 
 
 # groupsテーブル
@@ -55,25 +57,17 @@ _ has_many :groups, through: messages_users
 
 ## Association
 _ has_many :users, through: groups_users
+_ has_many :groups_users
+_ has_many :messages
 
 
 # groups_usersテーブル
 ｜Column｜Type｜Option|
 |------|----|------|
 |group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
 
 ## Association
 _ belongs_to :group
 _ belongs_to :user
 
-
-# messages_usersテーブル
-｜Column｜Type｜Option|
-|------|----|------|
-|messages_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false|
-
-## Association
-_ belongs_to :user
-_ belongs_to :message
