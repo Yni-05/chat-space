@@ -53,7 +53,6 @@ _ has_many :groups
 ｜Column｜Type｜Option|
 |------|----|------|
 |name|string|null: false|
-|groups_id|integer|null: false, foreign_key: true|
 
 ## Association
 _ has_many :user, through: groups_users
