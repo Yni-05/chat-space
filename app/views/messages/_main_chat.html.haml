@@ -1,0 +1,41 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__current-group
+        test
+      .main-header__left-box__member-list
+        Member: 
+        .main-header__left-box__member-list__member
+          masa
+    .main-header__edit-btn
+      = link_to "#", class: "edit-link-btn" do
+        Edit
+  .messages
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          masa
+        .message__upper-info__date
+          2020/1/24(fri)21:54:22
+      .message__text
+        おはよう！
+    .message
+      .message__upper-info
+        .message__upper-info__talker
+          masa
+        .message__upper-info__date
+          2020/1/24(fri)21:54:33
+      .message__text
+        今日は夜から雨
+  .form
+    .new-message
+      .input-box
+        .input-box__text
+          type a message
+        .input-box__image
+          %label{class: "imge-btn", for: "image"}
+            = icon('far', 'image')
+          %input{type: "file", id: "image"}
+      .submit-btn
+        = link_to "#", class: "send-link-btn" do
+          Send
