@@ -10,9 +10,12 @@
         .side-header__box__menu__edit-user
           = link_to "#" , class: "top-items__icons-btn" do
             = icon('fas', 'cog')
+
   .groups
-    .group
-      .group__group-name
-        techcamp
-      .group__latest-message
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。

@@ -36,6 +36,10 @@
     overflow: scroll;
     .group{
       margin-bottom: 40px;
+      a{
+        color: #ffffff;
+        text-decoration: none;
+      }
       &__group-name{
         font-size: 15px;
         margin-bottom: 5px;
