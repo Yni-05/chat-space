@@ -12,7 +12,8 @@
             = icon('fas', 'cog')
   .groups
     .group
-      .group__group-name
-        techcamp
-      .group__latest-message
-        まだメッセージがありません
+      = link_to group_message_path(group) do
+        .group__group-name
+          = group.name
+        .group__latest-message
+          まだメッセージがありません

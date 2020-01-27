@@ -11,22 +11,8 @@
       = link_to "#", class: "edit-link-btn" do
         Edit
   .messages
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-          masa
-        .message__upper-info__date
-          2020/1/24(fri)21:54:22
-      .message__text
-        おはよう！
-    .message
-      .message__upper-info
-        .message__upper-info__talker
-          masa
-        .message__upper-info__date
-          2020/1/24(fri)21:54:33
-      .message__text
-        今日は夜から雨
+    = render @messages
+
   .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
