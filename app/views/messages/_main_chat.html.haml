@@ -28,14 +28,10 @@
       .message__text
         今日は夜から雨
   .form
-    .new-message
-      .input-box
-        .input-box__text
-          type a message
-        .input-box__image
-          %label{class: "imge-btn", for: "image"}
-            = icon('far', 'image')
-          %input{type: "file", id: "image"}
-      .submit-btn
-        = link_to "#", class: "send-link-btn" do
-          Send
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
