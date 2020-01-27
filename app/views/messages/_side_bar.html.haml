@@ -11,9 +11,10 @@
           = link_to "#" , class: "top-items__icons-btn" do
             = icon('fas', 'cog')
   .groups
-    .group
-      = link_to group_message_path(group) do
-        .group__group-name
-          = group.name
-        .group__latest-message
-          まだメッセージがありません
+     - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            = group.show_last_message
