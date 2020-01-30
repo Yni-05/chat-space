@@ -10,8 +10,9 @@
         .side-header__box__menu__edit-user
           = link_to "#" , class: "top-items__icons-btn" do
             = icon('fas', 'cog')
+  
   .groups
-     - current_user.groups.each do |group|
+    - current_user.groups.each do |group|
       .group
         = link_to group_messages_path(group) do
           .group__name
