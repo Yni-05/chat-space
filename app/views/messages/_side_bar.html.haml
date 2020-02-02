@@ -2,7 +2,7 @@
   .side-header
     .side-header__box
       .side-header__box__user-name
-        = message.user.name
+        = current_user
       .side-header__box__menu
         .side-header__box__menu__new-group
           = link_to new_group_path , class: "top-items__icons-btn" do
