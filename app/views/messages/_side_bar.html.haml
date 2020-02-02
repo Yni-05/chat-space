@@ -2,13 +2,13 @@
   .side-header
     .side-header__box
       .side-header__box__user-name
-        masa
+        = message.user.name
       .side-header__box__menu
         .side-header__box__menu__new-group
           = link_to new_group_path , class: "top-items__icons-btn" do
             = icon('fas', 'edit')
         .side-header__box__menu__edit-user
-          = link_to "#" , class: "top-items__icons-btn" do
+          = link_to edit_user_registration_path , class: "top-items__icons-btn" do
             = icon('fas', 'cog')
   
   .groups
