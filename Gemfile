@@ -72,3 +72,5 @@ group :production do
 end
 
 gem 'sassc'
+
+gem 'rails_12factor' , group: :production
